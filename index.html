@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Train Scheduler</title>
+	<title>Time Sheet</title>
 
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -11,29 +11,36 @@
 </head>
 <body>
 
-	<div class="container center-align">
+	<div class="center-align">
 
 
+	<div class="container">
 		<div class="nav-extended z-depth-1">
 			<div class="nav-content">
-				<span class="nav-title">Train Schedules</span>
+				<span class="nav-title">Time Sheet</span>
 			</div>
 		</div>
+	</div>
+
+	<div class="container">
 
 		<br>
 
-		<div class="z-depth-1">Current Train Schedule
+		<div class="z-depth-1">Current Employees
 			<table>
 				<thead>
 					<tr>
-						<th>Train Name</th>
-						<th>Destination</th>
-						<th>Frequency</th>
-						<th>Next Arrival</th>
-						<th>Minutes Away</th>
+						<th>Employee Name</th>
+						<th>Role</th>
+						<th>Start Date</th>
+						<th>Monthly Rate ($)</th>
+						<th>Total Billed ($)</th>
 					</tr>
 				</thead>
-					<tbody>
+					<tbody id="tableBody">
+
+
+
 					</tbody>
 			</table>
 		</div>
@@ -41,31 +48,32 @@
 		<br>
 
 		<div class="row z-depth-1"> 
-			<span>Add a Train</span>
+			<span>Add a Employee</span>
 			<form class="col s12">
 				<div class="row">
 					<div class="input-field col s6">
-						<input placeholder="Train Name" id="TrainName" type="text" class="validate">
-						<label for="Train Name">Train Name</label>
+						<input placeholder="Employee Name" id="EmployeeName" type="text" class="validate">
+						<label for="Employee Name"></label>
 					</div>
 					<div class="input-field col s6">
-						<input placeholder="Destination" id="Destination" type="text" class="validate">
-						<label for="Destination">Destination</label>
+						<input placeholder="Role" id="Role" type="text" class="validate">
+						<label for="Role"></label>
 					</div>
 				</div>
 				
 				<div class="row">
 					<div class="input-field col s6">
-						<input placeholder="First Train Time" id="firstTrainTime" type="time" class="validate">
-						<label for="firstTrainTime">First Train Time (HH:mm military time)</label>
+						<input placeholder="Start Date (DD/MM/YY)" id="startDate" type="date" class="validate">
+						<label for="startDate"></label>
 					</div>
 					<div class="input-field col s6">
-					<input placeholder="Frequency" id="Frequency" type="text" class="validate">
-					<label for="Frequency">Frequency (min)</label>
+					<input placeholder="Montly Rate" id="monthlyRate" type="text" class="validate">
+					<label for="Montly Rate"></label>
 					</div>
+					<button id="addEmployee" type="submit" class="btn">Add Employee</button>
 				</div>
-				
 			</form>
+
 		</div>
 
 
@@ -73,7 +81,7 @@
 
 		
 
-
+</div>
 
 
 	</div>

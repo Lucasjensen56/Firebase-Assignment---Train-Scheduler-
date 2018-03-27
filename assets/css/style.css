@@ -1,3 +1,8 @@
 .nav-title {
 	font-size: 350%;
 }
+
+.container .row {
+    margin-left: 0.30rem;
+    margin-right: 0.26rem;
+}
