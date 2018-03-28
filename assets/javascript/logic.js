@@ -17,11 +17,11 @@
 
   // values
 
-  var name = "";
-  var role = "";
-  var age = 0;
-  var startDate = "";
-  var monthlyRate = "";
+  var trainName = "";
+  var destination = "";
+  var frequency = 0;
+  var nextArrival = "";
+  var minutesAway = "";
 
 
 
@@ -33,10 +33,12 @@ $("#addEmployee").on("click", function(event) {
 	event.preventDefault();
 	console.log("you added a employe")
 
-	 name = $("#EmployeeName").val().trim();
-     role = $("#Role").val().trim();
-     startDate = $("#startDate").val().trim();
-     monthlyRate = $("#monthlyRate").val().trim(); 
+	   trainName = $("#trainName").val().trim();
+     destination = $("#Role").val().trim();
+     frequency = $("#startDate").val().trim();
+     nextArrival = $("#monthlyRate").val().trim(); 
+     minutesAway = $("#monthlyRate").val().trim(); 
+
 
 
 
@@ -90,7 +92,7 @@ var sv = snapshot.val();
    //    console.log(sv.monthlyRate);
 
 
-$("#EmployeeName").text(snapshot.val().name);
+$("#trainName").text(snapshot.val().name);
 $("#Role").text(snapshot.val().Role)
 $("#startDate").text(snapshot.val().startDate)
 $("#monthlyRate").text(snapshot.val().monthlyRate)
