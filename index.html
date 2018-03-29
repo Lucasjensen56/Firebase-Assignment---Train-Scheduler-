@@ -52,41 +52,33 @@
 			<form class="col s12">
 				<div class="row">
 					<div class="input-field col s6">
-						<input placeholder="Train Name" id="tranName" type="text" class="validate">
-						<label for="Employee Name"></label>
+						<input placeholder="Train Name" id="trainName" type="text" class="validate">
+						<label for="Train Name"></label>
 					</div>
 					<div class="input-field col s6">
-						<input placeholder="Destination" id="Role" type="text" class="validate">
+						<input placeholder="Destination" id="destination" type="text" class="validate">
 						<label for="Role"></label>
 					</div>
 				</div>
 				
 				<div class="row">
 					<div class="input-field col s6">
-						<input placeholder="Frequency (min)" id="startDate" type="number" class="validate">
+						<input placeholder="Frequency (min)" id="frequency" type="number" class="validate">
 						<label for="startDate"></label>
 					</div>
 					<div class="input-field col s6">
-					<input placeholder="Next Arrival" id="monthlyRate" type="text" class="validate">
+					<input placeholder="First Train Time (HH: mm - military)" id="firstTrainTime" type="text" class="validate">
 					<label for="Montly Rate"></label>
 					</div>
 
 				</div>
-
-				<div class="row">
-					<div class="input-field col s6">
-						<input placeholder="Minutes Away" id="startDate" type="number" class="validate">
-						<label for="startDate"></label>
-					</div>
-				</div>
-				
 
 			</form>
 
 		</div>
 
 
-<button id="addEmployee" type="submit" class="btn">Add Train</button>
+<button id="addTrain" type="submit" class="btn">Add Train</button>
 
 		
 
@@ -97,6 +89,8 @@
 	
 	<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
 	<script src="assets/javascript/logic.js"></script>
 </body>
 </html>

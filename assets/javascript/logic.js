@@ -20,7 +20,7 @@
   var trainName = "";
   var destination = "";
   var frequency = 0;
-  var nextArrival = "";
+  var firstTrainTime = "";
   var minutesAway = "";
 
 
@@ -29,24 +29,29 @@
 
 
 
-$("#addEmployee").on("click", function(event) {
+$("#addTrain").on("click", function(event) {
 	event.preventDefault();
-	console.log("you added a employe")
+	
 
-	   trainName = $("#trainName").val().trim();
-     destination = $("#Role").val().trim();
-     frequency = $("#startDate").val().trim();
-     nextArrival = $("#monthlyRate").val().trim(); 
-     minutesAway = $("#monthlyRate").val().trim(); 
+	   trainName = $("#trainName").val();
+     destination = $("#destination").val().trim();
+     frequency = $("#frequency").val().trim();
+     firstTrainTime = $("#firstTrainTime").val().trim(); 
+
+     
+
+
+     // minutesAway = $("#minutesAway").val().trim(); 
 
 
 
 
 	database.ref().push({
 		name: name,
-		role: role,
-		startDate: startDate, 
-		monthlyRate: monthlyRate,
+		destination: destination,
+		frequency: frequency, 
+		firstTrainTime: firstTrainTime,
+    minutesAway: minutesAway,
 		dateAdded: firebase.database.ServerValue.TIMESTAMP	
 	});
 });
@@ -55,8 +60,9 @@ $("#addEmployee").on("click", function(event) {
 database.ref().on("child_added", function(childSnapshot) {
 
 	console.log(childSnapshot.val().name);
-	console.log(childSnapshot.val().role);
-	console.log(childSnapshot.val().monthlyRate);
+	console.log(childSnapshot.val().destination);
+	console.log(childSnapshot.val().firstTrainTime);
+  console.log(childSnapshot.val().minutesAway);
 	console.log(childSnapshot.val().dateAdded);
 
 
@@ -66,10 +72,54 @@ database.ref().on("child_added", function(childSnapshot) {
 
 
 	  $("#tableBody").append("<tr><td> " + childSnapshotVal.name + 
-	  	" </td><td class='role'> " + childSnapshotVal.role + 
-	  	" </td><td class='startDate'> " + childSnapshotVal.startDate +
-	  	" </td><td class='monthlyRate'> " + childSnapshotVal.monthlyRate +
+	  	" </td><td class='destination'> " + childSnapshotVal.destination + 
+	  	" </td><td class='frequency'> " + childSnapshotVal.frequency +
+	  	" </td><td class='nextTrain'> " + childSnapshotVal.nextTrain +
+      " </td><td class='minutesAway'> " + childSnapshotVal.minutesAway +
 	  	" </td></tr>");
+
+
+
+
+
+// moment JS 
+
+
+
+ // var tFrequency = 17;
+
+    var tFrequency = frequency;
+
+console.log(frequency)
+
+
+    // Time is 3:30 AM
+    var firstTime = "03:00";
+
+    // First Time (pushed back 1 year to make sure it comes before current time)
+    var firstTimeConverted = moment(firstTime, "hh:mm").subtract(1, "years");
+
+    console.log(firstTimeConverted);222
+
+    // Current Time
+    var currentTime = moment();
+    console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
+
+    // Difference between the times
+    var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
+    console.log("DIFFERENCE IN TIME: " + diffTime);
+
+    // Time apart (remainder)
+    var tRemainder = diffTime % tFrequency;
+    console.log(tRemainder);
+
+    // Minute Until Train
+    var tMinutesTillTrain = tFrequency - tRemainder;
+    console.log("MINUTES TILL TRAIN: " + tMinutesTillTrain);
+
+    // Next Train
+    var nextTrain = moment().add(tMinutesTillTrain, "minutes");
+    console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
 
 
 
@@ -87,19 +137,23 @@ database.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", functi
 var sv = snapshot.val();
 
 	  // console.log(sv.name);
-   //    console.log(sv.role);
-   //    console.log(sv.startDate);
-   //    console.log(sv.monthlyRate);
+   //    console.log(sv.destination);
+   //    console.log(sv.frequency);
+   //    console.log(sv.firstTrainTime);
 
 
 $("#trainName").text(snapshot.val().name);
-$("#Role").text(snapshot.val().Role)
-$("#startDate").text(snapshot.val().startDate)
-$("#monthlyRate").text(snapshot.val().monthlyRate)
+$("#destination").text(snapshot.val().destination)
+$("#frequency").text(snapshot.val().frequency)
+$("#firstTrainTime").text(snapshot.val().firstTrainTime)
+$("#minutesAway").text(snapshot.val().firstTrainTime)
 
 
 
 });
+
+
+
 
 
 
