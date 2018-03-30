@@ -79,6 +79,8 @@ var tFrequency = frequency;
     var tMinutesTillTrain = tFrequency - tRemainder;
     console.log("MINUTES TILL TRAIN: " + tMinutesTillTrain);
 
+    
+
 
     // Next Train
     var nextTrain = moment().add(tMinutesTillTrain, "minutes");
@@ -105,7 +107,7 @@ var tFrequency = frequency;
 		frequency: frequency, 
     trainArrival: trainArrival,
 		firstTrainTime: firstTrainTime,
-    minutesAway: minutesAway,
+    tMinutesTillTrain: tMinutesTillTrain,
 		dateAdded: firebase.database.ServerValue.TIMESTAMP	
 	});
 
@@ -137,7 +139,7 @@ database.ref().on("child_added", function(childSnapshot) {
 	  	" </td><td class='destination'> " + childSnapshotVal.destination + 
 	  	" </td><td class='frequency'> " + childSnapshotVal.frequency +
 	  	" </td><td class='trainArrival'> " + childSnapshotVal.trainArrival +
-      " </td><td class='minutesAway'> " + childSnapshotVal.minutesAway +
+      " </td><td class='tMinutesTillTrain'> " + childSnapshotVal.tMinutesTillTrain +
 	  	" </td></tr>");
 
 
