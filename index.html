@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="#78909c blue-grey lighten-1">
+<html>
 <head>
 	<title>Train Scheduler</title>
 
@@ -9,17 +9,18 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
+	
+
 </head>
-<body>
+<body class="#78909c blue-grey lighten-1">
 
 	<div class="center-align">
 
 
-	<div class="container">
-		<div class="nav-extended z-depth-1">
+	<div class="container-fluid">
+		<div class="nav-extended">
 			<div class="nav-content">
-				<span class="nav-title #eceff1 blue-grey-text text-lighten-5
-">TRAIN TIME TABLES</span>
+				<span class="nav-title">TRAIN TIME TABLES</span>
 			</div>
 		</div>
 	</div>
@@ -28,12 +29,10 @@
 
 		<br>
 
-		<div class="z-depth-1 center-align #37474f blue-grey-text text-darken-3
-
-">Current Train Schedule
+		<div id="row1" class="z-depth-1 center-align #37474f blue-grey-text text-darken-3 #546e7a blue-grey darken-1"><span class="secondaryTitles">Current Train Schedule</span>
 			<table>
 				<thead>
-					<tr>
+					<tr class="#fafafa grey-text text-lighten-5">
 						<th>Train Name</th>
 						<th>Destination</th>
 						<th>Frequency (min)</th>
@@ -41,7 +40,7 @@
 						<th>Minutes Away</th>
 					</tr>
 				</thead>
-					<tbody id="tableBody">
+					<tbody class="center-align #e0e0e0 grey-text text-lighten-2" id="tableBody">
 
 
 
@@ -51,8 +50,8 @@
 
 		<br>
 
-		<div class="row z-depth-1 center-align #37474f blue-grey-text text-darken-3"> 
-			<span>Add Train</span>
+		<div id="row2" class="row z-depth-1 center-align #37474f blue-grey-text text-darken-3 #546e7a blue-grey darken-1"> 
+			<span class="secondaryTitles">Add Train</span>
 			<form class="col s12">
 				<div class="row">
 					<div class="input-field col s6">
@@ -76,9 +75,7 @@
 					</div>
 				</div>
 				<div class="row">
-					<button id="addTrain" type="submit" class="btn #ff1744 red accent-3
-
-">Add Train</button>
+					<button id="addTrain" type="submit" class="btn #388e3c green darken-2">Add Train</button>
 				</div>
 
 			</form>

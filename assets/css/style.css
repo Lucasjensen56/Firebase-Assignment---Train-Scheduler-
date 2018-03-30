@@ -1,6 +1,7 @@
 .nav-title {
-	font-size: 350%;
-	font-family: 'Cairo', sans-serif;
+	font-size: 617%;
+font-family: 'Catamaran', sans-serif;
+	color: white;
 
 }
 
@@ -25,3 +26,27 @@
      border-bottom: 1px solid #d32f2f ;
      box-shadow: 0 1px 0 0 #d32f2f ;
    }
+
+   .secondaryTitles {
+   	font-family: 'Cairo', sans-serif;
+   	color: white;
+   	font-size: 300%;
+
+   }
+
+   th {
+	letter-spacing: 0.7px;
+  }
+
+ 
+
+  #row1 {
+
+    padding: 2%;
+  }
+
+  #row2 {
+    margin-left: 0rem;
+    margin-right: 0rem;
+    padding: 1%;
+}
