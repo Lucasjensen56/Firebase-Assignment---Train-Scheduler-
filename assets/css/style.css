@@ -1,8 +1,27 @@
 .nav-title {
 	font-size: 350%;
+	font-family: 'Cairo', sans-serif;
+
 }
 
 .container .row {
     margin-left: 0.30rem;
     margin-right: 0.26rem;
 }
+
+
+ .input-field label {
+     color: #d32f2f;
+   }
+
+
+  /* label focus color */
+   .input-field input[type=text]:focus + label {
+     color: #d32f2f;
+   }
+
+     /* label underline focus color */
+   .input-field input[type=text]:focus {
+     border-bottom: 1px solid #d32f2f ;
+     box-shadow: 0 1px 0 0 #d32f2f ;
+   }
